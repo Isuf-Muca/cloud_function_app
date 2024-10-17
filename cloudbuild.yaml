@@ -4,7 +4,7 @@ steps:
     args:
       [
         'functions', 'deploy', 'helloworldfunction', # Replace 'my-function' with your desired Cloud Function name
-        '--runtime', 'python312', # Replace with your preferred runtime
+        '--runtime', 'python39', # Replace with your preferred runtime
         '--trigger-http',
         '--allow-unauthenticated',
         '--region', 'us-central1', # Replace with your preferred region
