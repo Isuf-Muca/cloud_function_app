@@ -1,0 +1,17 @@
+steps:
+  # Step 1: Deploy to Cloud Functions
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      [
+        'functions', 'deploy', 'my-function', # Replace 'my-function' with your desired Cloud Function name
+        '--runtime', 'python311', # Replace with your preferred runtime
+        '--trigger-http',
+        '--allow-unauthenticated',
+        '--region', 'us-central1', # Replace with your preferred region
+        '--source', '.', # The source directory where your function code is located
+        '--entry-point', 'main', # Replace 'main' with the name of your function entry point
+      ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
